@@ -58,3 +58,30 @@ const autos = [
  }
  
  simuladorCompraAuto();
+
+ function simuladorCompraAuto() {
+  let opcion = '';
+
+  do {
+    opcion = prompt('Seleccione una opción:\n\n1. Ver catálogo de autos\n2. Comprar auto\n3. Salir');
+
+    switch (opcion) {
+      case '1':
+        mostrarCatalogo();
+        break;
+      case '2':
+        comprarAuto();
+        break;
+      case '3':
+        alert('Gracias por utilizar nuestra página oficial');
+        break;
+      default:
+        alert('Opción inválida');
+        break;
+    }
+  } while (opcion !== '3');
+}
+
+// obtener elemento del DOM y capturar su evento click
+var btnIniciarSimulador = document.getElementById("btnIniciarSimulador");
+btnIniciarSimulador.addEventListener("click", simuladorCompraAuto);
