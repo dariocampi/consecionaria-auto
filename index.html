@@ -1,16 +1,48 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Simulador</title>
-        <meta charset="utf-8">
-    </head>
-    <body>
-        <div class="img" ><img src="./img/portada.jpg" width="100%" alt=""></div>
 
-        <button id="btnIniciarSimulador">Iniciar simulador</button>
+<head>
+    <title>Simulador</title>
+    <meta charset="utf-8">
+    <style>
+        #catalogo,
+        #compra,
+        #salida {
+            display: none;
+        }
+    </style>
+</head>
 
-        <h1>CONCESIONARIA AUTO</h1>
+<body>
+    <div class="img"><img src="./img/portada.jpg" width="100%" alt=""></div>
 
-        <script type="text/javascript" src="./js/index.js"></script>
-    </body>
+    <button id="btnVerCatalogo">Ver catálogo de autos</button>
+    <button id="btnComprarAuto">Comprar auto</button>
+    <div id="confirmacion"></div>
+    <h1>CONCESIONARIA AUTO</h1>
+
+    <div id="catalogo">
+        <ul id="listaAutos"></ul>
+    </div>
+
+    <div id="compra">
+        <select id="seleccionAuto"></select>
+        <br>
+        Nombre: <input type="text" id="nombre">
+        <br>
+        Dirección: <input type="text" id="direccion">
+        <br>
+        Tarjeta de Crédito: <input type="text" id="tarjetaCredito">
+        <br>
+        <button id="btnConfirmarCompra">Confirmar compra</button>
+    </div>
+
+    <div id="salida">
+        <p>Gracias por utilizar nuestra página oficial</p>
+    </div>
+
+    <script type="text/javascript" src="./js/index.js"></script>
+
+</body>
+
 </html>
