@@ -2,6 +2,8 @@ const autos = [
   { modelo: '208', marca: 'Peugeot', anio: 2020, kilometraje: 5000, color: 'Rojo', precio: 25000 },
   { modelo: 'Cruze', marca: 'Chevrolet', anio: 2021, kilometraje: 10000, color: 'Azul', precio: 30000 },
   { modelo: 'Gol trend', marca: 'Volkswagen', anio: 2019, kilometraje: 15000, color: 'Negro', precio: 20000 },
+  {modelo: 'kangoo' , marca: 'renault', anio: 2019, kilometraje: 26000, color: 'negro' , precio: 35000
+  }
 ];
 
 function mostrarCatalogo() {
@@ -15,7 +17,7 @@ function mostrarCatalogo() {
 
   for (let index = 0; index < autosModeloEnMayuscula.length; index++) {
     const auto = autos[index];
-    catalogo = catalogo + (index + 1) + '. ' + auto.modelo + ' - ' + auto.marca + ' - ' + auto.anio + ' - ' + auto.kilometraje + ' km - ' + auto.color + ' - $' + auto.precio + '\n';
+    catalogo = catalogo + (index + 1) + '. ' + auto.marca + ' - ' + auto.modelo + ' - ' + auto.anio + ' - ' + auto.kilometraje + ' km - ' + auto.color + ' - $' + auto.precio + '\n';
   }
 
   alert(catalogo);
