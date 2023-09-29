@@ -4,45 +4,36 @@
 <head>
     <title>Simulador</title>
     <meta charset="utf-8">
-    <style>
-        #catalogo,
-        #compra,
-        #salida {
-            display: none;
-        }
-    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
-
 <body>
-    <div class="img"><img src="./img/portada.jpg" width="100%" alt=""></div>
-
-    <button id="btnVerCatalogo">Ver catálogo de autos</button>
-    <button id="btnComprarAuto">Comprar auto</button>
-    <div id="confirmacion"></div>
-    <h1>CONCESIONARIA AUTO</h1>
-
-    <div id="catalogo">
-        <ul id="listaAutos"></ul>
+    <div class="container mt-4">
+        <h1>CONCESIONARIA AUTO</h1>
+        <div class="img"><img src="./img/portada.jpg" width="100%" alt=""></div>
+        <div class="mt-3">
+            <button id="btnVerCatalogo" class="btn btn-primary">Ver catálogo de autos</button>
+            <button id="btnComprarAuto" class="btn btn-success">Comprar auto</button>
+        </div>
+        <div id="confirmacion" class="mt-3"></div>
+        <div id="catalogo" class="mt-3">
+            <ul id="listaAutos"></ul>
+        </div>
+        <div id="compra" class="mt-3">
+            <select id="seleccionAuto" class="form-control mb-2"></select>
+            <input type="text" id="nombre" class="form-control mb-2" placeholder="Nombre">
+            <input type="text" id="direccion" class="form-control mb-2" placeholder="Dirección">
+            <input type="text" id="tarjetaCredito" class="form-control mb-2" placeholder="Tarjeta de Crédito">
+            <button id="btnConfirmarCompra" class="btn btn-primary">Confirmar compra</button>
+        </div>
+        <div id="salida" class="mt-3">
+            <p>Gracias por utilizar nuestra página oficial</p>
+        </div>
     </div>
-
-    <div id="compra">
-        <select id="seleccionAuto"></select>
-        <br>
-        Nombre: <input type="text" id="nombre">
-        <br>
-        Dirección: <input type="text" id="direccion">
-        <br>
-        Tarjeta de Crédito: <input type="text" id="tarjetaCredito">
-        <br>
-        <button id="btnConfirmarCompra">Confirmar compra</button>
-    </div>
-
-    <div id="salida">
-        <p>Gracias por utilizar nuestra página oficial</p>
-    </div>
-
     <script type="text/javascript" src="./js/index.js"></script>
-
 </body>
-
 </html>

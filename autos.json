@@ -1,0 +1,35 @@
+[
+    {
+      "modelo": "208",
+      "marca": "Peugeot",
+      "anio": 2020,
+      "kilometraje": 5000,
+      "color": "Rojo",
+      "precio": 25000
+    },
+    {
+      "modelo": "Cruze",
+      "marca": "Chevrolet",
+      "anio": 2021,
+      "kilometraje": 10000,
+      "color": "Azul",
+      "precio": 30000
+    },
+    {
+      "modelo": "Gol trend",
+      "marca": "Volkswagen",
+      "anio": 2019,
+      "kilometraje": 15000,
+      "color": "Negro",
+      "precio": 20000
+    },
+    {
+      "modelo": "kangoo",
+      "marca": "Renault",
+      "anio": 2019,
+      "kilometraje": 26000,
+      "color": "Negro",
+      "precio": 35000
+    }
+  ]
+  
