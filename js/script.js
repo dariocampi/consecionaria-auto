@@ -65,7 +65,7 @@ let autos = { };
         if (!isNaN(anio)) {
             const autosFiltrados = Object.values(autos).filter(auto => auto.anio === anio);
             const resultado = autosFiltrados.map(auto => `${auto.modelo} - ${auto.marca}`);
-            $("#resultadoFiltrarPorAnio").html(`<p>Autos del año ${anio}:</p><ul>${resultado.map(item => `<li>${item}</li>`).join('')}</ul>`);
+            $("#resultadoFiltrarPorAnio").html(`<p>Autos del año ${anio}:</p><ul>${resultado.map(elemento => `<li>${elemento}</li>`).join('')}</ul>`);
         } else {
             $("#resultadoFiltrarPorAnio").text("Por favor, ingrese un año válido.");
         }
