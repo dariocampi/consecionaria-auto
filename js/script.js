@@ -3,9 +3,9 @@ let autos = { };
 
   function cargarDatosDesdeArchivo() {
     fetch('autos.json')
-        .then((response) => response.json())
-        .then((data) => {
-            autos = data;
+        .then((respuesta) => respuesta.json())
+        .then((datos) => {
+            autos = datos;
         })
         .catch((error) => {
             console.error('Error al cargar datos desde el archivo JSON local:', error);
@@ -16,9 +16,9 @@ let autos = { };
       const lista = $("#listaAutos");
       lista.empty();
 
-      Object.values(autos).forEach((auto, index) => {
-          const item = `<li>${index + 1}. ${auto.modelo} - ${auto.marca} - ${auto.anio} - ${auto.kilometraje} km - ${auto.color} - $${auto.precio}</li>`;
-          lista.append(item);
+      Object.values(autos).forEach((auto, indice) => {
+          const elemento = `<li>${indice + 1}. ${auto.modelo} - ${auto.marca} - ${auto.anio} - ${auto.kilometraje} km - ${auto.color} - $${auto.precio}</li>`;
+          lista.append(elemento);
       });
 
       $("#catalogo").show();
@@ -61,13 +61,13 @@ let autos = { };
   $("#btnVerCatalogo").click(mostrarCatalogo);
   $("#btnComprarAuto").click(function () {
       resetearCompra();
-      const select = $("#seleccionAuto");
-      select.empty();
+      const selector = $("#seleccionAuto");
+      selector.empty();
 
       Object.keys(autos).forEach((autoId) => {
           const auto = autos[autoId];
-          const option = `<option value="${autoId}">${auto.modelo} - ${auto.marca}</option>`;
-          select.append(option);
+          const opcion = `<option value="${autoId}">${auto.modelo} - ${auto.marca}</option>`;
+          selector.append(opcion);
       });
 
       $("#catalogo").hide();
