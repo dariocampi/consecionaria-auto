@@ -58,6 +58,40 @@ let autos = { };
       $("#confirmacion").text("");
   }
 
+
+   // Filtrar autos por año ingresado por el usuario usando filter
+   $("#btnFiltrarPorAnio").click(function () {
+        const anio = parseInt($("#inputAnio").val());
+        if (!isNaN(anio)) {
+            const autosFiltrados = Object.values(autos).filter(auto => auto.anio === anio);
+            const resultado = autosFiltrados.map(auto => `${auto.modelo} - ${auto.marca}`);
+            $("#resultadoFiltrarPorAnio").html(`<p>Autos del año ${anio}:</p><ul>${resultado.map(item => `<li>${item}</li>`).join('')}</ul>`);
+        } else {
+            $("#resultadoFiltrarPorAnio").text("Por favor, ingrese un año válido.");
+        }
+    });
+
+    // Buscar un auto por modelo ingresado por el usuario usando find
+    $("#btnBuscarPorModelo").click(function () {
+        const modelo = $("#inputModelo").val().trim();
+        if (modelo !== "") {
+            const autoEncontrado = Object.values(autos).find(auto => auto.modelo.toLowerCase() === modelo.toLowerCase());
+            if (autoEncontrado) {
+                $("#resultadoBuscarPorModelo").html(`<p>Auto encontrado: ${autoEncontrado.modelo} - ${autoEncontrado.marca}</p>`);
+            } else {
+                $("#resultadoBuscarPorModelo").text(`Auto con modelo "${modelo}" no encontrado.`);
+            }
+        } else {
+            $("#resultadoBuscarPorModelo").text("Por favor, ingrese un modelo válido.");
+        }
+    });
+
+    // Calcular el precio total de todos los autos usando reduce
+    $("#btnCalcularPrecioTotal").click(function () {
+        const precioTotal = Object.values(autos).reduce((total, auto) => total + auto.precio, 0);
+        $("#resultadoCalcularPrecioTotal").text(`Precio total de todos los autos: $${precioTotal}`);
+    });
+
   $("#btnVerCatalogo").click(mostrarCatalogo);
   $("#btnComprarAuto").click(function () {
       resetearCompra();

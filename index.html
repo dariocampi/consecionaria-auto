@@ -33,6 +33,26 @@
         <div id="salida" class="mt-3">
             <p>Gracias por utilizar nuestra página oficial</p>
         </div>
+        <div id="resultados" class="mt-3">
+            <h2>Operaciones personalizadas:</h2>
+            <button id="btnCalcularPrecioTotal" class="btn btn-info">Calcular precio total de autos</button>
+            <div class="form-group">
+                <label for="inputAnio">Ingrese el año:</label>
+                <input type="number" class="form-control" id="inputAnio">
+            </div>
+            <button id="btnFiltrarPorAnio" class="btn btn-info">Filtrar autos por año</button>
+
+            <div class="form-group mt-3">
+                <label for="inputModelo">Ingrese el modelo:</label>
+                <input type="text" class="form-control" id="inputModelo">
+            </div>
+            <button id="btnBuscarPorModelo" class="btn btn-info">Buscar auto por modelo</button>
+        </div>
+        <div id="resultadosOperaciones" class="mt-3">
+            <div id="resultadoFiltrarPorAnio"></div>
+            <div id="resultadoBuscarPorModelo"></div>
+            <div id="resultadoCalcularPrecioTotal"></div>
+        </div>
     </div>
     <script type="text/javascript" src="./js/script.js"></script>
 </body>
