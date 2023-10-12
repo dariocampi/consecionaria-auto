@@ -1,16 +1,14 @@
 
 let autos = { };
 
-  function cargarDatosDesdeArchivo() {
-    fetch('autos.json')
-        .then((respuesta) => respuesta.json())
-        .then((datos) => {
-            autos = datos;
-        })
-        .catch((error) => {
+    async function cargarDatosDesdeArchivo() {
+        try {
+            const response = await fetch('autos.json');
+            autos = await response.json();
+        } catch (error) {
             console.error('Error al cargar datos desde el archivo JSON local:', error);
-        });
-}
+        }
+    }
 
   function mostrarCatalogo() {
       const lista = $("#listaAutos");
@@ -39,15 +37,20 @@ let autos = { };
       }
   }
 
+
   function comprarAuto() {
     const seleccion = $("#seleccionAuto option:selected").text();
-      const nombre = $("#nombre").val();
-      const direccion = $("#direccion").val();
-      const tarjetaCredito = $("#tarjetaCredito").val();
-      guardarCompra(seleccion, nombre, direccion, tarjetaCredito);
+    const nombre = $("#nombre").val();
+    const direccion = $("#direccion").val();
+    const tarjetaCredito = $("#tarjetaCredito").val();
+    guardarCompra(seleccion, nombre, direccion, tarjetaCredito);
 
-      const confirmacion = $("#confirmacion");
-      confirmacion.text(`Compra realizada exitosamente.\n\nAuto: ${seleccion}\nNombre: ${nombre}\nDirección: ${direccion}\nTarjeta de crédito: ${tarjetaCredito}`);
+    Swal.fire({
+        title: 'Compra realizada exitosamente',
+        html: `Auto: ${seleccion}<br>Nombre: ${nombre}<br>Dirección: ${direccion}<br>Tarjeta de crédito: ${tarjetaCredito}`,
+        icon: 'success',
+        confirmButtonText: 'Ok'
+    }).then(() => {});
   }
 
   function resetearCompra() {
@@ -93,6 +96,8 @@ let autos = { };
     });
 
   $("#btnVerCatalogo").click(mostrarCatalogo);
+
+
   $("#btnComprarAuto").click(function () {
       resetearCompra();
       const selector = $("#seleccionAuto");
@@ -108,6 +113,10 @@ let autos = { };
       $("#compra").show();
       $("#salida").hide();
   });
+
+
+
+
   $("#btnConfirmarCompra").click(comprarAuto);
   $(document).ready(mostrarUltimaCompra);
   $(document).ready(cargarDatosDesdeArchivo);
